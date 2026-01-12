@@ -101,46 +101,59 @@ GET /search?query=wireless headphones
   }
 ]
 
-## Configuration
+Configuration
 
 All paths and runtime parameters are configurable via environment variables:
 
-- `EMBEDDING_MODEL_PATH`
-- `CATALOG_CSV_PATH`
-- `FAISS_INDEX_PATH`
-- `API_HOST`
-- `API_PORT`
+EMBEDDING_MODEL_PATH
+
+CATALOG_CSV_PATH
+
+FAISS_INDEX_PATH
+
+API_HOST
+
+API_PORT
 
 This allows the system to be adapted easily across environments without code changes.
 
----
+Scope & Limitations
 
-## Scope & Limitations
+Included:
 
-### Included
-- Semantic retrieval  
-- Dense vector search  
-- API-based querying  
-- Config-driven deployment  
+Semantic retrieval
 
-### Not included
-- Authentication / authorization  
-- UI layer  
-- Query reranking  
-- Text generation (RAG)  
-- Hybrid keyword + vector search  
+Dense vector search
+
+API-based querying
+
+Config-driven deployment
+
+Not included:
+
+Authentication / authorization
+
+UI layer
+
+Query reranking
+
+Text generation (RAG)
+
+Hybrid keyword + vector search
 
 These are intentional exclusions to keep the system focused and extensible.
 
----
-
-## Intended Use
+Intended Use
 
 This repository is intended to demonstrate:
 
-- Practical application of vector databases  
-- End-to-end semantic search pipelines  
-- Production-style API design  
-- Real-world engineering tradeoffs  
+Practical application of vector databases
+
+End-to-end semantic search pipelines
+
+Production-style API design
+
+Real-world engineering tradeoffs
 
 It is not a toy example or tutorial, but a generalized system inspired by real deployment scenarios.
+
