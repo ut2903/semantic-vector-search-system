@@ -1,3 +1,4 @@
+
 # Semantic Vector Search System
 
 This repository presents a generalized, production-inspired implementation of a **semantic vector search system** built using dense text embeddings and FAISS-based similarity search.
@@ -23,6 +24,8 @@ The implementation reflects patterns commonly used in real-world production syst
 
 High-level flow:
 
+```
+
 User Query
 ↓
 Text Preprocessing
@@ -35,6 +38,7 @@ Metadata Lookup
 ↓
 Ranked JSON Response
 
+```
 
 ---
 
@@ -61,33 +65,46 @@ A Flask-based HTTP API exposes a `/search` endpoint for querying the system.
 
 ## Project Structure
 
+```
+
 semantic-vector-search-system/
 │
 ├── app/
-│ └── api.py # Flask API entry point
+│   └── api.py              # Flask API entry point
 │
 ├── core/
-│ ├── preprocess.py # Text preprocessing
-│ ├── model.py # Embedding model loader
-│ └── search.py # FAISS search and result assembly
+│   ├── preprocess.py       # Text preprocessing
+│   ├── model.py            # Embedding model loader
+│   └── search.py           # FAISS search and result assembly
 │
 ├── config/
-│ └── paths.py # Configurable paths and runtime settings
+│   └── paths.py            # Configurable paths and runtime settings
+│
+├── data/
+│   └── sample_catalog.csv  # Example schema (optional)
 │
 ├── requirements.txt
 └── README.md
 
+```
 
 ---
 
 ## API Usage
 
 ### Endpoint
+```
+
 GET /search?query=<text>
 
+```
+
 ### Example
+```
+
 GET /search?query=wireless headphones
 
+````
 
 ### Sample Response
 ```json
@@ -100,60 +117,61 @@ GET /search?query=wireless headphones
     "Similarity_Score": 0.92
   }
 ]
+````
 
-Configuration
+---
+
+## Configuration
 
 All paths and runtime parameters are configurable via environment variables:
 
-EMBEDDING_MODEL_PATH
-
-CATALOG_CSV_PATH
-
-FAISS_INDEX_PATH
-
-API_HOST
-
-API_PORT
+* `EMBEDDING_MODEL_PATH`
+* `CATALOG_CSV_PATH`
+* `FAISS_INDEX_PATH`
+* `API_HOST`
+* `API_PORT`
 
 This allows the system to be adapted easily across environments without code changes.
 
-Scope & Limitations
+---
 
-Included:
+## Scope & Limitations
 
-Semantic retrieval
+**Included:**
 
-Dense vector search
+* Semantic retrieval
+* Dense vector search
+* API-based querying
+* Config-driven deployment
 
-API-based querying
+**Not included:**
 
-Config-driven deployment
-
-Not included:
-
-Authentication / authorization
-
-UI layer
-
-Query reranking
-
-Text generation (RAG)
-
-Hybrid keyword + vector search
+* Authentication / authorization
+* UI layer
+* Query reranking
+* Text generation (RAG)
+* Hybrid keyword + vector search
 
 These are intentional exclusions to keep the system focused and extensible.
 
-Intended Use
+---
+
+## Intended Use
 
 This repository is intended to demonstrate:
 
-Practical application of vector databases
-
-End-to-end semantic search pipelines
-
-Production-style API design
-
-Real-world engineering tradeoffs
+* Practical application of vector databases
+* End-to-end semantic search pipelines
+* Production-style API design
+* Real-world engineering tradeoffs
 
 It is not a toy example or tutorial, but a generalized system inspired by real deployment scenarios.
+
+---
+
+## License
+
+MIT License
+
+```
 
